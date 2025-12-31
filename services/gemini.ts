@@ -17,15 +17,12 @@ export const geminiService: AIService = {
       },
     ];
     const config = {
-      thinkingConfig: {
-        thinkingLevel: ThinkingLevel.HIGH,
-      },
       tools,
       systemInstruction: systemMessage
         ? { parts: [{ text: systemMessage.content }] }
         : undefined,
     };
-    const model = "gemini-2.0-flash-exp";
+    const model = "gemini-2.5-flash-lite";
 
     const contents = messages
       .filter((m) => m.role !== "system")
